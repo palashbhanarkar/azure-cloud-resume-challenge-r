@@ -1,0 +1,26 @@
+{
+    "bindings": [
+      {
+        "authLevel": "anonymous",
+        "name": "Counter",
+        "type": "httpTrigger",
+        "direction": "in",
+        "methods": [
+          "put"
+        ]
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "out"
+      },
+      {
+        "type": "table",
+        "name": "outputTable",
+        "tableName": "getresumecounterazure",
+        "connection": "DefaultEndpointsProtocol=https;AccountName=getresumecounterazure;AccountKey=NQk3A7aRAQqPdDym1OtmqVgMMcXIbu1KVCMe5dR3jmUbqRu7PUbEmszodgO5sLrUMav3OBKxaFY0JjACunxjGA==;TableEndpoint=https://getresumecounterazure.table.cosmos.azure.com:443/;",
+        "direction": "out"
+      }
+    ],
+    "disabled": false
+  }

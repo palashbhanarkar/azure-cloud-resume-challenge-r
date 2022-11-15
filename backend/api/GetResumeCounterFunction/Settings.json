@@ -1,0 +1,3 @@
+{  
+    "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=getresumecounterazure;AccountKey=NQk3A7aRAQqPdDym1OtmqVgMMcXIbu1KVCMe5dR3jmUbqRu7PUbEmszodgO5sLrUMav3OBKxaFY0JjACunxjGA==;TableEndpoint=https://getresumecounterazure.table.cosmos.azure.com:443/;"
+}
