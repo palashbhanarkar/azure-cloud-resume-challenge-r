@@ -298,6 +298,7 @@ img {
 }
 
 .home__description {
+  
   line-height: 1.4;
   margin-bottom: var(--mb-2);
 }
