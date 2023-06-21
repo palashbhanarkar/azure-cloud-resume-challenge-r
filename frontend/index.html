@@ -93,7 +93,7 @@
                             Hi, I am Palash!
                         </h1>
                         <h3 class="home__subtitle">Cloud Enthusiast | Salesforce Developer</h3>
-                        <p class="home__description">2x Azure Certified | C-DAC Certified <br> Microsoft Student Learn Ambassador (Alpha) <br> <br> Professional experience in Salesforce and learning various technologies.</p>
+                        <p class="home__description">2x Azure Certified | C-DAC Certified <br> Microsoft Student Learn Ambassador <br> <br> Professional experience in Salesforce and learning various technologies.</p>
                         <a href="#contact" class="button button--flex">
                             Contact Me &nbsp; <i class="uil uil-message button__icon"></i>
                         </a>
@@ -275,16 +275,16 @@
             </section>
 
             <!--==================== Qualification ====================-->
-            <section class="qualification section" >
+            <section class="qualification__section" >
                 <h2 class="section__title">Qualification</h2>
                 <span class="section__subtitle"></span>
                 <div class="qualification__container container">
                     <div class="qualification__tabs">
-                        <div class="qualification__button button--flex qualification__active" data-target="#educationn">
-                            <i class="uil uil-bag qualification__icon"></i>
+                        <div class="qualification__buttons button--flex">
+                            <i class="uil uil-book qualification__icon"></i>
                             Education
                         </div>
-                        <div class="qualification__button button--flex" data-target="#workk">
+                        <div class="qualification__buttons button--flex">
                             <i class="uil uil-bag-alt qualification__icon"></i>
                             Work
                         </div>
@@ -292,71 +292,26 @@
 
                     <div class="qualification__sections">
                         <!--==================== Qualification CONTENT 1====================-->
-                        <div class="qualification__content1 qualification__active" data-content id="educationn">
+                        <div class="qualification__content1 qualification__active">
                             
                             <!--==================== Qualification 1====================-->
                             <div class="qualification__data">
-                                <div class="qualification__split">
+                                <div class="qualification__left">
                                     <h3 class="qualification__title">MSc Advanced Computer Science</h3>
                                     <span class="qualification__subtitle">University of Leeds, UK</span>
                                     <div class="qualification__calender">
                                         <i class="uil uil-calendar-alt"></i>
                                         2022 - 2023
                                     </div>
+                                    <br><br>
                                 </div>
 
                                 <div>
                                     <span class="qualification__rounder"></span>
                                     <span class="qualification__line"></span>
                                 </div>
-                            </div>
-                            <!--==================== Qualification 2====================-->
-                            <div class="qualification__data">
-                                <div></div>
 
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                    <span class="qualification__line"></span>
-                                </div>
-
-                                <div class="qualification__split">
-                                    <h3 class="qualification__title">PG Diploma <br>Advanced Computing</h3>
-                                    <span class="qualification__subtitle">C-DAC Pune, India</span>
-                                    <div class="qualification__calender">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2019 - 2020
-                                    </div>
-                                </div>
-
-                                <div></div>
-
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                </div>
-                            </div>
-
-                            <!--==================== Qualification 3====================-->
-                            
-                            <div class="qualification__data">
-
-                                <div class="qualification__split">
-                                    <h3 class="qualification__title">Computer Engineering</h3>
-                                    <span class="qualification__subtitle">University of Pune, India</span>
-                                    <div class="qualification__calender">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2014 - 2019
-                                    </div>
-                                </div>
-
-                                
-                            </div>
-                        </div>
-
-                        <!--==================== Qualification CONTENT 2====================-->
-                        <div class="qualification__content2 catch__content" data-content id="workk">
-                            <!--==================== Qualification 1====================-->
-                            <div class="qualification__data">
-                                <div class="qualification__split">
+                                <div class="qualification__right">
                                     <h3 class="qualification__title">Salesforce Developer</h3>
                                     <span class="qualification__subtitle">Aethereus Consulting, <br> Pune, India</span>
                                     <div class="qualification__calender">
@@ -364,13 +319,46 @@
                                         2020 - 2021
                                     </div>
                                 </div>
+                            </div>
+                            <!--==================== Qualification 2====================-->
+                            
+                            <div class="qualification__data">
+                                <div class="qualification__left">
+                                    <h3 class="qualification__title">PG Diploma <br>Advanced Computing</h3>
+                                    <span class="qualification__subtitle">C-DAC Pune, India</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2019 - 2020
+                                    </div>
+                                    <br><br>
+                                </div>
 
                                 <div>
                                     <span class="qualification__rounder"></span>
-                                    <!-- <span class="qualification__line"></span> -->
+                                    <span class="qualification__line"></span>
+                                </div>
+                            </div>
+
+                            <!--==================== Qualification 3====================-->
+                            
+                            <div class="qualification__data">
+
+                                <div class="qualification__left">
+                                    <h3 class="qualification__title">Computer Engineering</h3>
+                                    <span class="qualification__subtitle">University of Pune, India</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2014 - 2019
+                                    </div>
+                                    <br><br>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -660,7 +648,7 @@
                 <span class="section__subtitle"></span>
                 <div class="certificate__container container swiper-container">
                     <div class="swiper-wrapper">
-                        <!--==================== CERTIFICATE 1.1 ====================-->
+                        <!--==================== CERTIFICATE 1 ====================-->
                         <div class="certificate__content grid swiper-slide">
                             <img src="assets/img/az104.png" alt="" class="certificate__image">
 
@@ -674,7 +662,7 @@
                             </div>
                         </div>
 
-                        <!--==================== CERTIFICATE 1.2 ====================-->
+                        <!--==================== CERTIFICATE 2 ====================-->
                         <div class="certificate__content grid swiper-slide">
                             <img src="assets/img/az900.png" alt="" class="certificate__image">
 
@@ -687,23 +675,9 @@
                                 </a>
                             </div>
                         </div>
-
-                        <!--==================== CERTIFICATE 2 ====================-->
+                        
+                        <!--==================== CERTIFICATE 3 ====================-->
                         <div class="certificate__content grid swiper-slide">
-                            <img src="assets/img/azLevelAlpha.png" alt="" class="certificate__image">
-
-                            <div class="certificate__data">
-                                <h3 class="certificate__title">Microsoft Learn Student Ambassador (Alpha)</h3>
-                                <span class="certificate__span"></span>
-                                <a href="https://studentambassadors.microsoft.com/en-US/studentambassadors/profile/f872e58d-6618-4bcc-b840-56d0e5e4ea35" target="_blank" class="button button--flex button--small certificate__button">
-                                    View
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                         <!--==================== CERTIFICATE 3 ====================-->
-                         <div class="certificate__content grid swiper-slide">
                             <img src="assets/img/trailhead.png" alt="" class="certificate__image">
 
                             <div class="certificate__data">
@@ -716,21 +690,8 @@
                             </div>
                         </div>
 
+
                         <!--==================== CERTIFICATE 4 ====================-->
-                        <div class="certificate__content grid swiper-slide">
-                            <img src="assets/img/CDAC.png" alt="" class="certificate__image">
-
-                            <div class="certificate__data">
-                                <h3 class="certificate__title">Centre for Development of Advanced Computing</h3>
-                                <span class="certificate__span"></span>
-                                <a href="assets/img/CDAC-certificate.png" target="_blank" class="button button--flex button--small certificate__button">
-                                    View
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--==================== CERTIFICATE 5 ====================-->
                         <div class="certificate__content grid swiper-slide">
                             <img src="assets/img/aws.png" alt="" class="certificate__image">
 
@@ -744,7 +705,7 @@
                             </div>
                         </div>
 
-                        <!--==================== CERTIFICATE 6 ====================-->
+                         <!--==================== CERTIFICATE 5 ====================-->
                         <div class="certificate__content grid swiper-slide">
                             <img src="assets/img/gcp.png" alt="" class="certificate__image">
 
@@ -758,19 +719,34 @@
                             </div>
                         </div>
 
-                        <!--==================== CERTIFICATE 7 ====================-->
+                        <!--==================== CERTIFICATE 6 ====================-->
                         <div class="certificate__content grid swiper-slide">
-                            <img src="assets/img/gcp.png" alt="" class="certificate__image">
+                            <img src="assets/img/dp900.png" alt="" class="certificate__image">
 
                             <div class="certificate__data">
-                                <h3 class="certificate__title">Industrial IoT on Google Cloud Platform</h3>
+                                <h3 class="certificate__title">Microsoft Certified: Data Fundamentals</h3>
                                 <span class="certificate__span"></span>
-                                <a href="https://www.coursera.org/account/accomplishments/certificate/8V6S3EW9BGKT" target="_blank" class="button button--flex button--small certificate__button">
+                                <a href="https://www.credly.com/badges/a2adc11d-dfdc-473d-9a2f-9cec6e41f7a2/public_url" target="_blank" class="button button--flex button--small certificate__button">
                                     View
                                     <i class="uil uil-arrow-right button__icon"></i>
                                 </a>
                             </div>
                         </div>
+
+                        <!--==================== CERTIFICATE 7 ====================-->
+                        <div class="certificate__content grid swiper-slide">
+                            <img src="assets/img/ai900.png" alt="" class="certificate__image">
+
+                            <div class="certificate__data">
+                                <h3 class="certificate__title">Microsoft Certified: AI Fundamentals</h3>
+                                <span class="certificate__span"></span>
+                                <a href="https://www.credly.com/badges/8371786a-7c03-4215-9850-2768f6e8e93a/public_url" target="_blank" class="button button--flex button--small certificate__button">
+                                    View
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
                         <!--=======================================================-->
                     </div>
                     <!--Add Arrows-->
