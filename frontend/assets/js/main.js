@@ -121,19 +121,16 @@ window.addEventListener('scroll', scrollUp)
 
 /*==================== VISITOR COUNTER ====================*/ 
 
-const getVisitorCount = () => {
+const getVisitorCount = async () => {
     let visitorCount = 0;
-    let counterApiUrl = process.env["FUNCTION_URL"];
-    fetch(counterApiUrl).then(response => {
-        return response.json()
-    }).then(response => {
-        visitorCount = response.visitorCount;
-        document.getElementById("counter").innerText = visitorCount;
-        console.log("Visitor Count API called. \nCounter: " + visitorCount);
-    }).catch(function(error){
-        console.log(error);
-    });
-    console.log(visitorCount);
+    let counterApiUrl = "https://visitorcounterapp.azurewebsites.net/api/VisitorCounter?code=gR7p0o-ulz4vOfeoqJfhYHqZOStT9NFRB-KScxBlA4z6AzFuafMQBA==";
+    const response = await fetch(counterApiUrl);
+    console.log(response);
+    
+    visitorCount = await response.json();
+    console.log("Visitor Count API called. \nCounter: " + visitorCount);
+
+    document.getElementById("counter").innerText = visitorCount;
     return visitorCount;
 }
 
