@@ -121,10 +121,9 @@ window.addEventListener('scroll', scrollUp)
 
 /*==================== VISITOR COUNTER ====================*/ 
 
-const counterApiUrl = process.env.CounterApiUrl;
-
 const getVisitorCount = () => {
     let visitorCount = 0;
+    let counterApiUrl = process.env["FUNCTION_URL"];
     fetch(counterApiUrl).then(response => {
         return response.json()
     }).then(response => {
