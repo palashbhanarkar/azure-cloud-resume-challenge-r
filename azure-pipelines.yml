@@ -26,8 +26,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: $(vmImageName)
 
     steps:
     - task: DotNetCoreCLI@2
@@ -59,8 +57,6 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     environment: 'development'
-    pool:
-      vmImage: $(vmImageName)
 
     strategy:
       runOnce:
