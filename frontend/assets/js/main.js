@@ -119,4 +119,24 @@ function scrollUp(){
 }
 window.addEventListener('scroll', scrollUp)
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== VISITOR COUNTER ====================*/ 
+window.addEventListener('DOMContentLoaded', (event) => {
+    getVisitorCount();
+})
+
+const counterApiUrl = process.env.CounterApiUrl;
+
+const getVisitorCount = () => {
+    let visitorCount = 0;
+    fetch(counterApiUrl).then(response => {
+        return response.json()
+    }).then(response => {
+        visitorCount = response.visitorCount;
+        document.getElementById("counter").innerText = visitorCount;
+        console.log("Visitor Count API called. \nCounter: " + visitorCount);
+    }).catch(function(error){
+        console.log(error);
+    });
+    console.log(visitorCount);
+    return visitorCount;
+}

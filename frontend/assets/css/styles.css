@@ -762,6 +762,10 @@ img {
   font-size: var(--small-font-size);
 }
 
+.visitor__counter {
+  display: none;
+}
+
 .footer__copy {
   font-size: var(--smaller-font-size);
   text-align: center;
@@ -1014,6 +1018,10 @@ img {
     margin-top: 3rem;
    }
 
+   .visitor__counter {
+    display: none;
+  }
+
 /* For large devices */
 
 @media screen and (min-width: 1024px){
@@ -1047,6 +1055,10 @@ img {
 
   .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -2.5rem;
+  }
+
+  .visitor__counter {
+    display: none;
   }
 }
 
