@@ -120,9 +120,6 @@ function scrollUp(){
 window.addEventListener('scroll', scrollUp)
 
 /*==================== VISITOR COUNTER ====================*/ 
-window.addEventListener('DOMContentLoaded', (event) => {
-    getVisitorCount();
-})
 
 const counterApiUrl = process.env.CounterApiUrl;
 
@@ -140,3 +137,7 @@ const getVisitorCount = () => {
     console.log(visitorCount);
     return visitorCount;
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    getVisitorCount();
+})
