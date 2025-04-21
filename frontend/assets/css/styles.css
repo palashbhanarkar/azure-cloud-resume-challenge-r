@@ -850,10 +850,6 @@ img {
     justify-content: center;
   }
 
-  .projects__content.center-last {
-    grid-column: 2 / 3;
-  }
-
   .projects__content {
     padding-right: 3.5rem;
   }
@@ -924,6 +920,7 @@ img {
   }
 
 }
+
 
 @media screen and (min-width: 768px) {
 
@@ -1016,6 +1013,10 @@ img {
   .projects__container {
     grid-template-columns: repeat(3, 218px);
     justify-content: center;
+  }
+
+  .projects__content.center-last {
+    grid-column: 2 / 3;
   }
 
   .projects__icon {
