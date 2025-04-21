@@ -534,10 +534,6 @@ img {
   grid-template-columns: repeat(2,1fr);
 }
 
-.projects__content.center-last {
-  grid-column: 2 / 3;
-}
-
 .project__gap {
   margin-bottom: var(--mb-3);
 }
