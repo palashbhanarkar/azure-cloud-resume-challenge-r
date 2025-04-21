@@ -381,9 +381,13 @@ img {
 /*==================== ABOUT ====================*/
 .about__description {
   text-align: center;
+  text-wrap: pretty;
+  hyphens: auto;
   margin-bottom: var(--mb-2-5);
   line-height: 1.4;
 }
+
+
 
 .about__buttons {
   display: flex;
