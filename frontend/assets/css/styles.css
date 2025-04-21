@@ -534,6 +534,10 @@ img {
   grid-template-columns: repeat(2,1fr);
 }
 
+.projects__content.center-last {
+  grid-column: 2 / 3;
+}
+
 .project__gap {
   margin-bottom: var(--mb-3);
 }
@@ -566,6 +570,15 @@ img {
   display: block;
   width: 37%;
   height: 30%;
+  text-align: left;
+  color: var(--first-color);
+  margin-bottom: var(--mb-1);
+}
+
+.projects__image__icon_azure {
+  display: block;
+  width: 23%;
+  height: 23%;
   text-align: left;
   color: var(--first-color);
   margin-bottom: var(--mb-1);
@@ -837,6 +850,10 @@ img {
     justify-content: center;
   }
 
+  .projects__content.center-last {
+    grid-column: 2 / 3;
+  }
+
   .projects__content {
     padding-right: 3.5rem;
   }
@@ -875,6 +892,10 @@ img {
   .projects__container {
     grid-template-columns: max-content;
     justify-content: center;
+  }
+
+  .projects__content.center-last {
+    grid-column: 2 / 3;
   }
 
   .projects__content {
