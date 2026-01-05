@@ -3,7 +3,7 @@
 ## Overview
 This project is an implementation of the Cloud Resume Challenge using Microsoft Azure. It demonstrates building and deploying a cloud-based web application with basic automation and serverless components.
 
-## What I Built
+## Core Features
 - Static frontend hosted using Azure Static Web Apps
 - Serverless backend using Azure Functions
 - Data storage using Azure Cosmos DB
@@ -16,7 +16,7 @@ This project is an implementation of the Cloud Resume Challenge using Microsoft 
 - GitHub Actions
 - HTML, CSS, JavaScript, Python
 
-## What This Project Demonstrates
+## Focus Areas
 - Cloud service integration on Azure
 - Serverless application fundamentals
 - Basic CI/CD workflows
@@ -24,3 +24,4 @@ This project is an implementation of the Cloud Resume Challenge using Microsoft 
 
 ## Notes
 This project focuses on cloud fundamentals and automation rather than large-scale production workloads.
+
