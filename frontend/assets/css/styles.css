@@ -776,7 +776,7 @@ img {
 }
 
 .visitor__counter {
-  display: block !important;
+  display: none !important;
   text-align: center;
   font-size: var(--small-font-size) !important;
   color: var(--title-color) !important;
