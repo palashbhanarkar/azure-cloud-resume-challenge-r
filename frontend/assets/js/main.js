@@ -165,6 +165,15 @@ const getVisitorCount = async () => {
         return null;
     }
 
+    // Debug logging
+    console.log("✓ Counter element found:", counterElement);
+    console.log("  - Tag:", counterElement.tagName);
+    console.log("  - ID:", counterElement.id);
+    console.log("  - Parent:", counterElement.parentElement?.className);
+    console.log("  - Visible (offsetHeight > 0):", counterElement.offsetHeight > 0);
+    console.log("  - Display CSS:", window.getComputedStyle(counterElement).display);
+    console.log("  - Current text:", counterElement.textContent);
+
     // Set initial loading state
     counterElement.textContent = "Loading...";
 
