@@ -1,9 +1,54 @@
+# CI for Cloud Resume Challenge
+# For now, runs only on the feature branch.
 trigger:
   - feature/session-aware-visitor-counter
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-  - script: echo "Cloud Resume pipeline placeholder"
-    displayName: "Placeholder"
+variables:
+  # Adjust if your default branch is not master
+  buildConfiguration: 'Release'
+
+stages:
+  - stage: BuildAndDeploy
+    displayName: "Build and deploy frontend + Function"
+    jobs:
+      - job: Frontend_And_Backend
+        displayName: "Deploy SWA frontend and Function App"
+        steps:
+          - checkout: self
+
+          # 1) Frontend deploy to Azure Static Web App
+          - task: AzureStaticWebApp@0
+            displayName: "Deploy frontend to Azure Static Web App"
+            inputs:
+              # Use your existing SWA deployment token stored as a secret variable in the pipeline
+              azure_static_web_apps_api_token: "$(SWA_DEPLOYMENT_TOKEN)"
+              app_location: "frontend"
+              api_location: ""           # backend is a separate Function App, so leave empty
+              output_location: ""        # no build step if plain HTML/JS
+              sku: "Free"
+              is_linux: true
+              location: "West Europe"
+              app_name: "cloud-resume-web-app"
+              resource_group: "static-web-app-2"
+
+          # 2) Backend deploy to existing Function App
+          - task: DotNetCoreCLI@2
+            displayName: "Publish Function App"
+            inputs:
+              command: "publish"
+              projects: "backend/api/GetResumeCounter/GetResumeCounter.csproj"
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/publish"
+              publishWebProjects: false
+              modifyOutputPath: false
+              zipAfterPublish: true
+
+          - task: AzureFunctionApp@2
+            displayName: "Deploy Function App"
+            inputs:
+              azureSubscription: "<YOUR_AZURE_SERVICE_CONNECTION_NAME>"
+              appType: "functionApp"
+              appName: "cloud-resume-visitor-counter"
+              package: "$(Build.ArtifactStagingDirectory)/publish/**/*.zip"
