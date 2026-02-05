@@ -786,14 +786,10 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   min-height: 2rem;
   line-height: 1.5;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 #counter {
   display: inline !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 .footer__copy {
