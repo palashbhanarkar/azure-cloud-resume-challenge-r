@@ -1,0 +1,11 @@
+﻿{
+  "properties": {
+    "deploymentAuthPolicy": "DeploymentToken",
+    "repositoryToken": "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",
+    "buildProperties": {
+      "appLocation": "...",
+      "apiLocation": "...",
+      "outputLocation": "..."
+    }
+  }
+}

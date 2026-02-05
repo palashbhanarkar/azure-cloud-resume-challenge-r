@@ -1,0 +1,9 @@
+{
+  "configurations": {
+    "preview": {
+      "appLocation": "frontend",
+      "apiLocation": "backend/api/GetResumeCounter",
+      "outputLocation": "frontend"
+    }
+  }
+}
