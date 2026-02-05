@@ -1,0 +1,9 @@
+trigger:
+  - feature/session-aware-visitor-counter
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: echo "Cloud Resume pipeline placeholder"
+    displayName: "Placeholder"
