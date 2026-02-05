@@ -776,11 +776,18 @@ img {
 }
 
 .visitor__counter {
-  display: inline-block;
+  display: block;
+  text-align: center;
   font-size: var(--small-font-size);
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
-  padding: 0 var(--mb-0-5);
+  padding: var(--mb-1) 0;
+  margin-top: var(--mb-1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#counter {
+  display: inline;
 }
 
 .footer__copy {
