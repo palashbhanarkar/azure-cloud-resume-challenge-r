@@ -776,18 +776,24 @@ img {
 }
 
 .visitor__counter {
-  display: block;
+  display: block !important;
   text-align: center;
-  font-size: var(--small-font-size);
-  color: var(--title-color);
+  font-size: var(--small-font-size) !important;
+  color: var(--title-color) !important;
   font-weight: var(--font-semi-bold);
-  padding: var(--mb-1) 0;
-  margin-top: var(--mb-1);
+  padding: var(--mb-1) 0 !important;
+  margin-top: var(--mb-1) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 2rem;
+  line-height: 1.5;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 #counter {
-  display: inline;
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer__copy {
