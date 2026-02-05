@@ -1,0 +1,49 @@
+# CI/CD Pipeline for Cloud Resume Challenge
+# Service connection: azure-paytogo-cloud-resume
+
+trigger:
+  - feature/session-aware-visitor-counter
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: 'Release'
+
+stages:
+  - stage: Deploy
+    displayName: "Deploy Frontend and Backend"
+    jobs:
+      - job: DeployResources
+        displayName: "Deploy Static Web App and Function App"
+        steps:
+          - checkout: self
+
+          # Deploy Frontend to Azure Static Web App
+          - task: AzureStaticWebApp@0
+            displayName: "Deploy frontend to Static Web App"
+            inputs:
+              azure_static_web_apps_api_token: "$(SWA_DEPLOYMENT_TOKEN)"
+              app_location: "frontend"
+              api_location: ""
+              output_location: ""
+
+          # Build Function App
+          - task: DotNetCoreCLI@2
+            displayName: "Build Function App"
+            inputs:
+              command: "publish"
+              projects: "backend/api/GetResumeCounter/GetResumeCounter.csproj"
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/publish"
+              publishWebProjects: false
+              modifyOutputPath: false
+              zipAfterPublish: true
+
+          # Deploy Function App
+          - task: AzureFunctionApp@2
+            displayName: "Deploy Function App"
+            inputs:
+              azureSubscription: "azure-paytogo-cloud-resume"
+              appType: "functionApp"
+              appName: "cloud-resume-visitor-counter"
+              package: "$(Build.ArtifactStagingDirectory)/publish/**/*.zip"
