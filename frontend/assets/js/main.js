@@ -123,7 +123,7 @@ window.addEventListener('scroll', scrollUp)
 
 // Configuration - move to environment variable in production
 const VISITOR_COUNTER_CONFIG = {
-    apiUrl: window.VISITOR_COUNTER_API_URL || "/api/VisitorCounter",
+    apiUrl: window.VISITOR_COUNTER_API_URL || "/api/VisitorCounter", //updated to match API route
     counterId: "counter",
     timeout: 5000, // 5 seconds
     storageKey: "resume_visitor_counted" // localStorage key to track if this browser is a counted visitor
