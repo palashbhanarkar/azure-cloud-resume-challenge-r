@@ -776,7 +776,11 @@ img {
 }
 
 .visitor__counter {
-  display: none;
+  display: inline-block;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 0 var(--mb-0-5);
 }
 
 .footer__copy {

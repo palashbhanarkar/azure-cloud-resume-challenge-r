@@ -20,12 +20,23 @@ namespace GetResumeCounter
 
         [FunctionName("VisitorCounter")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", "options", Route = null)] HttpRequest req,
             ILogger log)
         {
+            // Handle CORS preflight requests
+            if (req.Method == "OPTIONS")
+            {
+                return HandleCorsPreFlight();
+            }
+
             try
             {
                 log.LogInformation("Visitor counter request received.");
+
+                // Add CORS headers to the request context for response
+                req.HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                req.HttpContext.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+                req.HttpContext.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type");
 
                 // Get connection string from environment
                 string connectionString = Environment.GetEnvironmentVariable("VisitorCounterConnectionString");
@@ -106,6 +117,23 @@ namespace GetResumeCounter
                 log.LogError($"Unexpected error: {ex.Message}");
                 return new ObjectResult("An unexpected error occurred") { StatusCode = 500 };
             }
+        }
+
+        /// <summary>
+        /// Helper method to add CORS headers to response
+        /// </summary>
+        private static IActionResult AddCorsHeaders(IActionResult result)
+        {
+            // This is handled by AddCorsHeaders extension method below
+            return result;
+        }
+
+        /// <summary>
+        /// Handle CORS preflight requests
+        /// </summary>
+        private static IActionResult HandleCorsPreFlight()
+        {
+            return new OkResult();
         }
     }
 }
