@@ -2,8 +2,7 @@
 # Service connection: azure-paytogo-cloud-resume
 
 trigger:
-  - feature/session-aware-visitor-counter
-
+  - master
 pool:
   vmImage: ubuntu-latest
 
