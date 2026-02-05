@@ -1,3 +1,6 @@
+
+//console.log("MAIN_JS_VERSION = 2026-02-05-1809");
+
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
